@@ -1,0 +1,74 @@
+from pathlib import Path
+
+"""
+Trier les fichiers contenus dans le dossier data selon les associations suivantes :
+mp3, wav, flac : Musique
+avi, mp4, gif : Videos
+bmp, png, jpg : Images
+txt, pptx, csv, xls, odp, pages : Documents
+autres : Divers
+"""
+
+types_extensions = {
+    "Musique" : ["mp3", "wav", "flac"] ,
+    "Videos" : ["avi", "mp4", "gif", "mov"] ,
+    "Images" : ["mp", "png", "jpeg"] ,
+    "Documents" : ["txt", "pptx", "csv", "xls", "odp", "pages"] ,
+}
+
+p = Path.cwd() / "fichiers_a_trier"
+
+fichiers_a_trier = [f for f in p.iterdir() if f.is_file()]
+print(fichiers_a_trier)
+print(f"nb of files = {len(fichiers_a_trier)}")
+
+for fichier in fichiers_a_trier:
+    placed = False
+    for type in types_extensions:
+        if fichier.suffix.lstrip(".") in types_extensions[type]:
+            new_dir = p / type
+            new_dir.mkdir(exist_ok=True)
+            fichier.replace(new_dir / fichier.name)
+            placed = True
+            break
+
+    if not placed:
+        new_dir = p / "Divers"
+        new_dir.mkdir(exist_ok=True)
+        fichier.replace(p / "Divers" / fichier.name)
+
+
+'''Code thibh (formateur) : ''' 
+# EXTENSIONS_MAPPING = {".mp3": "Musique",
+#                       ".wav": "Musique",
+#                       ".mp4": "Videos",
+#                       ".avi": "Videos",
+#                       ".gif": "Videos",
+#                       ".bmp": "Images",
+#                       ".png": "Images",
+#                       ".jpg": "Images",
+#                       ".txt": "Documents",
+#                       ".pptx": "Documents",
+#                       ".csv": "Documents",
+#                       ".xls": "Documents",
+#                       ".odp": "Documents",
+#                       ".pages": "Documents"}
+
+# BASE_DIR = Path('/Users/thibh/trieur_fichiers/data')
+
+# # On récupère tous les fichiers dans le dossier de base
+# files = [f for f in BASE_DIR.iterdir() if f.is_file()]
+# for file in files:  # On boucle sur chaque fichier
+    
+#     # On récupère le dossier cible à partir du dictionnaire
+#     dossier_cible = EXTENSIONS_MAPPING.get(file.suffix, "Divers")
+#     # On concatène le dossier de base avec le dossier cible
+#     dossier_cible_absolu = BASE_DIR / dossier_cible
+#     # On crée le dossier cible s'il n'existe pas déjà
+#     dossier_cible_absolu.mkdir(exist_ok=True)
+#     # On concatène le dossier cible avec le nom du fichier
+#     fichier_cible = dossier_cible_absolu / file.name
+#     # On déplace le fichier
+#     file.rename(fichier_cible)
+
+        
