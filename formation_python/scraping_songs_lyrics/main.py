@@ -46,25 +46,25 @@ def get_words_from_all_lyrics():
         lyrics_divs = soup.find_all(
             "div", attrs={"data-lyrics-container": "true"}
         )
+        # pprint("\n\n ==== lyrics_divs \n\n")
         # pprint(lyrics_divs)
-
-        # for div in lyrics_divs:
-        #     for tag in div.select(
-        #             "a[data-lyrics-annotation-id], span.ReferentFragment"
-        #     ):
-        #             pprint(tag)
-        #             tag.unwrap()
-        #             tag.decompose()
 
         for div in lyrics_divs:
             # Remove annotation links
-            for tag in div.find_all(["a", "span"], attrs={
-                "data-lyrics-annotation-id": True
-            }):
-                pprint("=== pre :\n {tag}")
-                # tag.unwrap()
+            for tag in div.find_all("a", attrs={"href": "#about"}):
+                # pprint("=== pre :\n {tag}")
                 tag.decompose()
-                pprint("=== post :\n {tag}")
+                # pprint("=== post :\n {tag}")
+
+            for tag in div.find_all("div", attrs={"class": re.compile(r"^LyricsHeader")}):
+                # pprint("=== pre1 :\n {tag}")
+                tag.decompose()
+                # pprint("=== post1 :\n {tag}")
+
+            for tag in div.find_all("span", attrs={"class": re.compile(r"^Contributors")}):
+                # pprint("=== pre2 :\n {tag}")
+                tag.decompose()
+                # pprint("=== post2 :\n {tag}")
 
         lyrics = "\n".join(
             div.get_text(separator="\n", strip=True)
@@ -73,7 +73,7 @@ def get_words_from_all_lyrics():
 
         lyrics = re.sub(r"\[.*?\](?:\s*\(x\s*\d+\))?\n?", "", lyrics).strip()
 
-        # print(lyrics)
+        print(lyrics)
 
 # get_all_lyrics_urls()
 get_words_from_all_lyrics()
