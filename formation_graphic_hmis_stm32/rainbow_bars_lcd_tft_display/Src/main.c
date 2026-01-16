@@ -39,13 +39,16 @@ void SystemClock_Setup(void)
 	RCC_TypeDef *pRCC = RCC;
 
 //	REG_CLR_BIT(pRCC->PLLCFGR,12U);
-	//1.Setting up main PLL
-	//PLL_M
+	//1.Setting up main PLL (to max freq. 80MHz)
+	//PLL_M = 1
 	REG_SET_VAL(pRCC->PLLCFGR,0x01U,0x70U,4U);
-	//PLL_N
+	//PLL_N = 10
 	REG_SET_VAL(pRCC->PLLCFGR,0x0AU,0x3FU,8U);
-	//PLL_M
+	//PLL_R = 2
 	REG_SET_VAL(pRCC->PLLCFGR,0x02U,0x03U,25U);
+
+	//PLL_REN (main PLL output enable )set
+	REG_SET_VAL(pRCC->PLLCFGR,0x01U,0x01U,24U);
 
 
 
