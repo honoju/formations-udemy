@@ -24,6 +24,8 @@
 #include <stdio.h>
 #include "FreeRTOS.h"
 #include "task.h"
+#include "string.h"
+#include "SEGGER_SYSVIEW.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -33,7 +35,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define DWT_CTRL    (*(volatile uint32_t*)0xE0001000)
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -92,16 +94,25 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-
-
   /* USER CODE BEGIN 2 */
+
+  //Enable the CYCCNT counter.
+  DWT_CTRL |= ( 1 << 0);
+
+  SEGGER_UART_init(115200);
+
+  SEGGER_SYSVIEW_Conf();
+
+//  SEGGER_SYSVIEW_Start();
+
 	status = xTaskCreate(task1_handler, "task-1", 200, "Hello world from task-1", 2, &task1_handle);
 	configASSERT( status == pdPASS );
 
 	status = xTaskCreate(task2_handler, "task-2", 200, "Hello world from task-2", 2, &task2_handle);
 	configASSERT( status == pdPASS );
 
-	xPortStartScheduler();
+	vTaskStartScheduler();
+//	xPortStartScheduler();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -210,14 +221,30 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 static void task1_handler(void* parameters)
 {
-	printf("%s\n", (char*)parameters);
-	taskYIELD();
+	char msg[100];
+	while(1)
+	{
+		HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
+		HAL_Delay(200);
+//		printf("%s\n", (char*)parameters);
+		snprintf(msg, 100, "%s\n", (char*)parameters);
+		SEGGER_SYSVIEW_PrintfTarget(msg);
+		taskYIELD();
+	}
 }
 
-static void task1_handler(void* parameters)
+static void task2_handler(void* parameters)
 {
-	printf("%s\n", (char*)parameters);
-	taskYIELD();
+	char msg[100];
+	while(1)
+	{
+		HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+		HAL_Delay(200);
+//		printf("%s\n", (char*)parameters);
+		snprintf(msg, 100, "%s\n", (char*)parameters);
+		SEGGER_SYSVIEW_PrintfTarget(msg);
+		taskYIELD();
+	}
 }
 /* USER CODE END 4 */
 

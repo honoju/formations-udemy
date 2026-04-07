@@ -7,6 +7,7 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\hj.abijuru\Documents\formations_udemy\formation_graphic_hmis_stm32\Demo_Roaring_tiger_F429"/>
 			<item value="C:\Users\hj.abijuru\Documents\STM32CubeL4\Projects\STM32L476G-EVAL\Applications\TouchSensing\TouchSensing_1touchkey\STM32CubeIDE"/>
 			<item value="C:\Users\hj.abijuru\Documents\formations_udemy\formation_graphic_hmis_stm32\rainbow_bars_lcd_tft_display"/>
 		</list>

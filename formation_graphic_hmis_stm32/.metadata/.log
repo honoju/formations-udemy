@@ -740,3 +740,91 @@ org.eclipse.equinox.p2.core.ProvisionException: An error occurred while download
 
 !ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2026-01-14 16:11:16.495
 !MESSAGE Won't launch debug session since we failed to locate the binary.
+!SESSION 2026-04-01 17:29:41.924 -----------------------------------------------
+eclipse.buildId=Version 1.12.1
+java.version=11.0.17
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:\Users\hj.abijuru\Documents\formations_udemy\formation_graphic_hmis_stm32
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2026-04-01 17:29:49.569
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-04-01 17:29:49.573
+!MESSAGE Log4j2 initialized with config file C:\Users\hj.abijuru\Documents\formations_udemy\formation_graphic_hmis_stm32\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-04-01 17:29:59.018
+!MESSAGE Started RMI Server, listening on port 41338
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-07 10:13:13.462
+!MESSAGE Indexed 'Demo_Roaring_tiger_F429' (29 sources, 110 headers) in 7,53 sec: 8 910 declarations; 35 383 references; 2 unresolved inclusions; 42 syntax errors; 147 unresolved names (0,33 %)
+
+!ENTRY org.eclipse.core.resources 4 77 2026-04-07 10:13:14.095
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2026-04-07 10:13:14.095
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2026-04-07 10:13:14.095
+!MESSAGE C:\Users\hj.abijuru\Documents\formations_udemy\formation_graphic_hmis_stm32\Demo_Roaring_tiger_F429 overlaps the location of another project: 'Demo_Roaring_tiger_F429'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2026-04-07 10:13:14.097
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2026-04-07 10:13:42.287
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2026-04-07 10:13:42.289
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2026-04-07 10:13:42.289
+!MESSAGE C:\Users\hj.abijuru\Documents\formations_udemy\formation_graphic_hmis_stm32\Demo_Roaring_tiger_F429 overlaps the location of another project: 'Demo_Roaring_tiger_F429'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2026-04-07 10:13:42.293
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2026-04-07 10:14:04.790
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2026-04-07 10:14:04.790
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2026-04-07 10:14:04.790
+!MESSAGE C:\Users\hj.abijuru\Documents\formations_udemy\formation_graphic_hmis_stm32\Demo_Roaring_tiger_F429 overlaps the location of another project: 'Demo_Roaring_tiger_F429'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2026-04-07 10:14:04.797
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2026-04-07 10:15:27.129
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2026-04-07 10:15:27.129
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2026-04-07 10:15:27.129
+!MESSAGE C:\Users\hj.abijuru\Documents\formations_udemy\formation_graphic_hmis_stm32\Demo_Roaring_tiger_F429 overlaps the location of another project: 'Demo_Roaring_tiger_F429'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2026-04-07 10:15:27.143
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2026-04-07 10:15:27.358
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2026-04-07 10:15:27.358
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2026-04-07 10:15:27.358
+!MESSAGE C:\Users\hj.abijuru\Documents\formations_udemy\formation_graphic_hmis_stm32\Demo_Roaring_tiger_F429 overlaps the location of another project: 'Demo_Roaring_tiger_F429'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2026-04-07 10:15:27.365
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2026-04-07 10:22:43.237
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2026-04-07 10:22:43.237
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2026-04-07 10:22:43.237
+!MESSAGE C:\Users\hj.abijuru\Documents\formations_udemy\formation_graphic_hmis_stm32\Demo_Roaring_tiger_F429 overlaps the location of another project: 'Demo_Roaring_tiger_F429'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2026-04-07 10:22:43.243
+!MESSAGE Project is null
+
+!ENTRY org.eclipse.core.resources 4 77 2026-04-07 10:22:43.549
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2026-04-07 10:22:43.549
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2026-04-07 10:22:43.549
+!MESSAGE C:\Users\hj.abijuru\Documents\formations_udemy\formation_graphic_hmis_stm32\Demo_Roaring_tiger_F429 overlaps the location of another project: 'Demo_Roaring_tiger_F429'
+
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2026-04-07 10:22:43.565
+!MESSAGE Project is null
