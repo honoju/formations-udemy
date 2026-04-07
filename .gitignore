@@ -1,0 +1,4 @@
+# Ignore Debug, Release, and .metadata directories anywhere in the repo
+**/Debug/
+**/Release/
+**/.metadata/
