@@ -1,0 +1,9 @@
+[submodule "formation-python"]
+	path = formation-python
+	url = https://github.com/honoju/formation-python.git
+[submodule "formation-freertos-stm32f4"]
+	path = formation-freertos-stm32f4
+	url = https://github.com/honoju/formation-freertos-stm32f4.git
+[submodule "formation_lvgl_stm32"]
+	path = formation_lvgl_stm32
+	url = https://github.com/honoju/formation_lvgl_stm32.git
